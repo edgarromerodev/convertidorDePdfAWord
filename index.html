@@ -9,17 +9,56 @@
 </head>
 <body>
     <div class="container">
-        <h1>Convertir PDF a Word</h1>
-        <div class="upload-area" id="uploadArea">
-            <input type="file" id="fileInput" accept="application/pdf" hidden>
-            <i class="fas fa-cloud-upload-alt upload-icon"></i>
-            <p>Arrastra y suelta tu archivo PDF aquí o</p>
-            <button id="uploadButton"><i class="fas fa-upload"></i> Selecciona un archivo</button>
+        <div class="header">
+            <h1>Convertir PDF a Word</h1>
+            <p>Convierte tus archivos PDF a formato Word de manera rápida y sencilla</p>
         </div>
-        <button id="convertButton"><i class="fas fa-file-word"></i> Convertir a Word</button>
-        <button id="downloadButton" style="display: none;"><i class="fas fa-download"></i> Descargar Archivo</button>
-        <div id="status"></div>
+        
+        <div class="upload-area" id="uploadArea">
+            <i class="fas fa-file-pdf upload-icon"></i>
+            <div class="upload-text">
+                <h3>Selecciona o arrastra tu archivo PDF</h3>
+                <p>Límite de tamaño: 10MB</p>
+            </div>
+            <button class="btn" id="uploadButton">
+                <i class="fas fa-upload"></i> Seleccionar archivo
+            </button>
+            <input type="file" id="fileInput" accept="application/pdf" hidden>
+        </div>
+        
+        <div class="file-info" id="fileInfo">
+            <i class="fas fa-file-pdf file-icon"></i>
+            <div class="file-details">
+                <div class="file-name" id="fileName"></div>
+                <div class="file-size" id="fileSize"></div>
+            </div>
+            <button class="btn-secondary" id="changeFileBtn">
+                <i class="fas fa-exchange-alt"></i>
+            </button>
+        </div>
+        
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-info">
+                <span class="progress-label">Procesando...</span>
+                <span class="progress-percentage" id="progressPercentage">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-fill" id="progressBarFill"></div>
+            </div>
+        </div>
+        
+        <div class="status-message" id="statusMessage"></div>
+        
+        <div class="action-buttons">
+            <button class="btn" id="convertButton" disabled>
+                <i class="fas fa-file-word"></i> Convertir a Word
+            </button>
+            <button class="btn" id="downloadButton" style="display: none;">
+                <i class="fas fa-download"></i> Descargar Archivo
+            </button>
+        </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
